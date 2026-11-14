@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Dafne ♡</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #fff5f7;
+  color: #754451;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+header {
+  min-height: 100vh;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#f9dfe7, #fff5f7);
+}
+
+h1 {
+  font-size: 43px;
+  color: #bd5472;
+  font-style: italic;
+}
+
+h2 {
+  color: #bd5472;
+}
+
+p {
+  line-height: 1.8;
+}
+
+button {
+  background: #d87591;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 24px;
+  margin: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #b94e6d;
+  transform: scale(1.05);
+}
+
+.contenedor {
+  max-width: 650px;
+  margin: auto;
+  padding: 20px;
+}
+
+.carta {
+  background: white;
+  padding: 27px;
+  border-radius: 18px;
+  box-shadow: 0 5px 20px #eacbd2;
+  margin: 20px 0;
+  animation: aparecer 1s ease;
+}
+
+.seccion {
+  padding: 30px 10px;
+  margin: 25px 0;
+}
+
+.oculto {
+  display: none;
+}
+
+#contador {
+  font-size: 25px;
+  color: #c05272;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+iframe {
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+footer {
+  background: #f9dfe7;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+/* FLOR ANIMADA */
+
+.flor-contenedor {
+  width: 180px;
+  height: 210px;
+  position: relative;
+  margin: 15px auto 25px;
+}
+
+.flor {
+  position: absolute;
+  width: 100%;
+  height: 155px;
+  top: 0;
+}
+
+.petalo {
+  position: absolute;
+  width: 53px;
+  height: 78px;
+  background: linear-gradient(#ffb5ca, #e66c91);
+  border-radius: 50% 50% 45% 45%;
+  left: 63px;
+  top: 28px;
+  transform-origin: 50% 90%;
+  box-shadow: inset 0 0 8px #ffffff80;
+}
+
+.p1 { transform: rotate(0deg) translateY(-23px); }
+.p2 { transform: rotate(60deg) translateY(-23px); }
+.p3 { transform: rotate(120deg) translateY(-23px); }
+.p4 { transform: rotate(180deg) translateY(-23px); }
+.p5 { transform: rotate(240deg) translateY(-23px); }
+.p6 { transform: rotate(300deg) translateY(-23px); }
+
+.centro-flor {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f7d36c;
+  left: 72px;
+  top: 65px;
+  z-index: 2;
+  border: 3px solid #f4b7a5;
+}
+
+.tallo {
+  position: absolute;
+  width: 7px;
+  height: 90px;
+  background: #78a779;
+  left: 87px;
+  top: 115px;
+  border-radius: 10px;
+}
+
+.hoja {
+  position: absolute;
+  width: 35px;
+  height: 17px;
+  background: #8dbd8a;
+  border-radius: 100% 0 100% 0;
+  top: 155px;
+  left: 55px;
+  transform: rotate(25deg);
+}
+
+.flor.abierta .petalo {
+  animation: abrirPetalos 1.5s ease forwards;
+}
+
+@keyframes abrirPetalos {
+  0% {
+    transform: rotate(var(--rot)) translateY(0) scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(var(--rot)) translateY(-23px) scale(1);
+    opacity: 1;
+  }
+}
+
+.flor.abierta .p1 { --rot: 0deg; }
+.flor.abierta .p2 { --rot: 60deg; }
+.flor.abierta .p3 { --rot: 120deg; }
+.flor.abierta .p4 { --rot: 180deg; }
+.flor.abierta .p5 { --rot: 240deg; }
+.flor.abierta .p6 { --rot: 300deg; }
+
+.corazon-flotante {
+  position: fixed;
+  bottom: -30px;
+  color: #e88ba4;
+  font-size: 20px;
+  pointer-events: none;
+  animation: flotar 4s linear forwards;
+  z-index: 10;
+}
+
+@keyframes flotar {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  100% {
+    transform: translateY(-100vh) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PORTADA -->
+
+<header>
+
+  <div class="corazon-flor" style="font-size:30px;color:#d87591">
+    ♡
+  </div>
+
+  <h1>Para Dafne</h1>
+
+  <p>Un pequeño detalle para alegrarte el día.</p>
+
+  <div class="flor-contenedor">
+    <div class="flor" id="flor">
+      <div class="petalo p1"></div>
+      <div class="petalo p2"></div>
+      <div class="petalo p3"></div>
+      <div class="petalo p4"></div>
+      <div class="petalo p5"></div>
+      <div class="petalo p6"></div>
+      <div class="centro-flor"></div>
+    </div>
+    <div class="tallo"></div>
+    <div class="hoja"></div>
+  </div>
+
+  <p id="mensajeFlor">Una flor para vos ♡</p>
+
+  <button onclick="abrirFlor()" id="botonFlor">
+    Hacer florecer ♡
+  </button>
+
+  <div id="entrada" class="oculto">
+    <p>Ahora sí, tengo algo para mostrarte.</p>
+    <button onclick="irCarta()">
+      Descubrir mi sorpresa ♡
+    </button>
+  </div>
+
+</header>
+
+
+<div class="contenedor">
+
+  <!-- CARTA -->
+
+  <section id="miCarta" class="carta oculto">
+
+    <h2>Para mi Dafne ♡</h2>
+
+    <p>
+      aunque estes de mal humor o cansada o me odies
+    </p>
+
+    <p>
+    yobte sigo amando como el primer dia
+    </p>
+
+    <p>
+      nunca te voy a dejar dr amar
+    </p>
+
+    <p>
+      Espero poder sacarte una sonrisa con esto
+    </p>
+
+    <p>
+      No te olvides de que te amo demasiado, perdom por no ser el mejor
+    </p>
+
+    <h3>Te mando un besito enorme ♡</h3>
+
+    <p><i>Con amor, yo.</i></p>
+
+  </section>
+
+
+  <!-- CONTADOR -->
+
+  <section class="seccion">
+
+    <h2>Nuestro tiempo juntos ♡</h2>
+
+    <p>Desde aquel 21 de junio de 2026...</p>
+
+    <div id="contador">Calculando...</div>
+
+    <p>Y por muchos momentos más juntos.</p>
+
+  </section>
+
+
+  <!-- MUSICA -->
+
+  <section class="seccion">
+
+    <h2>Una canción para vos ♡</h2>
+
+    <p>una cancion especial para ti.</p>
+
+    <iframe
+      width="100%"
+      height="200"
+      src="https://www.youtube-nocookie.com/embed/p_1Osm5xE5Y"
+      title="Una canción para Dafne"
+      frameborder="0"
+      allow="encrypted-media; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+
+    <p><i>Espero que te guste .</i></p>
+
+  </section>
+
+
+  <!-- SORPRESAS -->
+
+  <section class="seccion">
+
+    <h2>Unas pequeñas sorpresas ♡</h2>
+
+    <p>Elegí una, unas palabritas para tu.</p>
+
+    <button onclick="mostrar('sorpresa1')">
+      Cuando estés mal
+    </button>
+
+    <button onclick="mostrar('sorpresa2')">
+      Cuando necesites una sonrisa
+    </button>
+
+    <button onclick="mostrar('sorpresa3')">
+      Un último mensajito...
+    </button>
+
+    <div id="sorpresa1" class="carta oculto">
+      <p>
+        estoy orgulloso de vos por ser pro en todo y ser buenq conmigo. ♡
+      </p>
+    </div>
+
+    <div id="sorpresa2" class="carta oculto">
+      <p>
+        te amo mucho no lo olvides gil. ♡
+      </p>
+    </div>
+
+    <div id="sorpresa3" class="carta oculto">
+      <h2>Te mi wawa ♡</h2>
+      <p>
+        Ojalá pudiera darte un abrazo
+        y hacerte olvidar por un ratito
+        todas tus problemas 
+      </p>
+      <p>Gracias por todo y por ser vos.</p>
+    </div>
+
+  </section>
+
+</div>
+
+
+<footer>
+  <div style="font-size:30px;color:#d87591">♡</div>
+  <p>Hecho especialmente para vos.</p>
+  <p>Con mucho amor.</p>
+</footer>
+
+
+<script>
+
+// ANIMACIÓN DE LA FLOR
+
+function abrirFlor() {
+
+  document.getElementById("flor").classList.add("abierta");
+
+  document.getElementById("mensajeFlor").innerText =
+    "Una flor que florece solamente para vos ♡";
+
+  document.getElementById("botonFlor").style.display = "none";
+
+  setTimeout(() => {
+    document.getElementById("entrada").classList.remove("oculto");
+  }, 1600);
+
+  crearCorazones();
+}
+
+
+// IR A LA CARTA
+
+function irCarta() {
+
+  document.getElementById("miCarta").classList.remove("oculto");
+
+  document.getElementById("miCarta").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+
+  crearCorazones();
+
+}
+
+
+// MOSTRAR SORPRESAS
+
+function mostrar(id) {
+
+  const elemento = document.getElementById(id);
+
+  elemento.classList.toggle("oculto");
+
+  if (!elemento.classList.contains("oculto")) {
+    crearCorazones();
+
+    elemento.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }
+
+}
+
+
+// CONTADOR DESDE EL 21 DE JUNIO DE 2026
+
+function actualizarContador() {
+
+  const inicio = new Date(2026, 5, 21);
+
+  const hoy = new Date();
+
+  const dias = Math.floor(
+    (hoy - inicio) / (1000 * 60 * 60 * 24)
+  );
+
+  document.getElementById("contador").innerText =
+    dias + " días juntos ♡";
+
+}
+
+actualizarContador();
+
+
+// CORAZONES FLOTANTES
+
+function crearCorazones() {
+
+  for (let i = 0; i < 15; i++) {
+
+    const corazon = document.createElement("div");
+
+    corazon.classList.add("corazon-flotante");
+
+    corazon.innerHTML = "♡";
+
+    corazon.style.left = Math.random() * 100 + "vw";
+
+    corazon.style.animationDuration =
+      (3 + Math.random() * 2) + "s";
+
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+      corazon.remove();
+    }, 5000);
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
